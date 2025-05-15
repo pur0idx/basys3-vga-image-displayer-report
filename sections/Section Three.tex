@@ -1,0 +1,46 @@
+\section{Implementation Detail}
+
+% \subsection{VGA Something} % subsection name
+% \lstinputlisting[caption={vga\_test.v}]{code/vga_test.v} % load code from file 'code/'
+% \modulecode{vga\_test}{Top-level test module that drives a simple VGA signal generator. It integrates a clock module and a VGA controller to produce synchronization signals and display output.} %  emoji
+% \newpage
+% --------- code block with desc ------------
+\subsection{VGA Controller}
+\lstinputlisting[caption={vga\_controller.v}]{code/vga_controller.v}
+\modulecode{vga\_controller}{Generates timing signals for VGA display at 60 Hz using a 25 MHz clock.}
+% --------------------------------------------
+
+% \newpage
+% \subsection{Image Rom Something}
+% \lstinputlisting[caption={image\_rom.v}]{code/image_rom.v}
+% \modulecode{image\_rom}{do something}
+
+\newpage
+\subsection{Image Pixel Controller}
+\lstinputlisting[caption={image\_pixel\_controller.v}]{code/image_pixel_controller.v}
+\modulecode{image\_pixel\_controller}{Scale image to 320 x 420 and switch image by jumping to another address}
+
+\newpage
+\subsection{Image Generator}
+\lstinputlisting[caption={image\_generator.v}]{code/image_generator.v}
+\modulecode{image\_generator}{This is the top module use to connect the wires and all the modules together. It contains Clock Wizrad module, vga\_controller module and image\_pixel\_controller module.}
+
+\newpage
+\subsection{Constraints}
+\lstinputlisting[caption={image\_constr.xdc}]{code/image_constr.xdc}
+\modulecode{image\_constr.xdc (not a module)}{Mapping the logical design (Verilog Code) to Physical Hardware Pins on the Basys 3 Board}
+% \verbatiminput{code/image_constr.xdc}
+
+% \begin{lstlisting}
+% module single_pulser (
+%    input wire data_in, // input data
+%    input wire clk,     // clock
+%    input wire rst,     // active low reset
+%    output wire data_out // output data
+% );
+
+% endmodule
+% \end{lstlisting}
+
+% \lipsum
+

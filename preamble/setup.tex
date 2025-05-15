@@ -1,0 +1,84 @@
+\usepackage[margin=1in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fontspec}
+\usepackage{array}
+
+% \usepackage{emoji}
+% \setemojifont{Apple Color Emoji}
+
+\hypersetup{
+    hidelinks
+}
+
+\setcounter{secnumdepth}{3}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}  % for centered header
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}  % for left-aligned body
+
+\urlstyle{same}
+\newcommand{\sectionbreak}{\clearpage}
+
+\newcommand{\modulecode}[2]{
+  \textbf{Module:} #1 \\[0.3em]
+  \textbf{Description:} #2
+  % \textbf{Code:}
+  % \vspace{0.3em}
+}
+
+\renewcommand{\lstlistingname}{Figure}
+\renewcommand{\lstlistingnamestyle}{\footnotesize\bfseries}
+
+\captionsetup[lstlisting]{
+  font=small,
+  textfont=it,
+  labelsep=colon,
+  margin=1.5cm
+}
+
+\titleformat{\section}[display]
+  {\normalfont\bfseries}{}{0pt}{\huge}
+  
+\captionsetup[figure]{margin=1.5cm,font=small,labelfont={bf},name={Figure},labelsep=colon,textfont={it}}
+\captionsetup[table]{margin=1.5cm,font=small,labelfont={bf},name={Table},labelsep=colon,textfont={it}}
+\SetLipsumDefault{1}
+
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+% \newfontface\menlo{fonts/Menlo-Regular.ttf}
+
+\lstset{
+    language=Verilog,            % Language (Verilog)
+    basicstyle=\ttfamily\small,  % Use a smaller font (better for readability)
+    backgroundcolor=\color{codegray}, % Code block background
+    keywordstyle=\color{NavyBlue},   % Change keyword color to cyan
+    commentstyle=\color{gray},   % Change comments to gray for subtlety
+    stringstyle=\color{orange},  % Change strings to orange
+    morecomment=[s][\color{magenta}]{/*}{*/}, % Multi-line comments
+    numbers=left,                % Line numbers on the left
+    numberstyle=\ttfamily\tiny\color{gray}, % Small line number font
+    stepnumber=1,                % Number every line
+    numbersep=7pt,               % Reduce space between line numbers and code
+    frame=single,                % Single frame around the code
+    tabsize=4,                   % Tab size
+    captionpos=b,                % Caption at the bottom of the block
+    breaklines=true,             % Break long lines automatically
+    showstringspaces=false,      % Don’t show spaces in strings
+    lineskip=0pt,                % No extra vertical space between lines
+    xleftmargin=15pt,            % Add margin on the left for better alignment
+    xrightmargin=15pt,           % Add margin on the right for better alignment
+    basewidth=5.1pt              % Char Spacing
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\moduleTitle}
+\lfoot{\groupName}
+\rfoot{\thepage}

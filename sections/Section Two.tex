@@ -1,0 +1,14 @@
+\section{Design Decision}
+
+\subsection{{Module Architecture}} \\
+The system is divided into three modules: \texttt{image\_generator}, \texttt{image\_pixel\_controller}, and \texttt{vga\_controller}. This modular approach improves clarity, debugging, and scalability. Each module has a defined role—generation, coordination, and display—allowing isolated testing and easier future upgrades.
+
+\subsection{{Communication Protocols}} \\
+We used native signal interfacing instead of protocols like AXI, as all modules share the same clock and communicate directly. This reduces latency and resource overhead, which suits our tightly-coupled design.
+
+
+\subsection{{Clock and Data Rate}} \\
+A shared clock domain was chosen to avoid synchronization issues. The VGA controller operates at 25\,MHz to match 640×480 @60Hz standards. Other modules operate within this timing without critical delays.
+
+\subsection{{Resource Utilization}} \\
+Using Single Port ROM for storing image data, but logic is efficiently distributed. The current design minimizes LUT and FF usage, focusing on simplicity.

@@ -1,0 +1,18 @@
+\section{Challenges Faced}
+
+\begin{itemize}
+    \item Reading from and writing data to the SD card
+    \item Limited learning resources
+    \item Displaying images on the screen from the SD card
+    \item Understanding communication protocols (e.g., SPI)
+    \item Debugging with macOS machines
+    \item Lack of proper documentation or example code
+    \item Time-consuming trial and error process
+    \item Lengthy synthesis and implementation process in Vivado
+\end{itemize}
+
+The main challenges of this project stemmed from our lack of experience, documentation, and code examples for working with VGA and SD card interfaces.  
+Since we had no prior experience with reading from or writing to an SD card, working with it proved to be extremely challenging for us—as it likely is for many others as well.
+
+Additionally, a significant portion of the project time was spent waiting for Vivado to complete tasks such as compilation, synthesis, or bitstream generation, all of which heavily depend on the performance of the machine used.  
+Apart from software debugging, hardware debugging on macOS was also difficult. Since we used Docker to run Vivado on macOS, the built-in probe tool could not directly connect to the FPGA board via USB, adding another layer of complexity to the process.
